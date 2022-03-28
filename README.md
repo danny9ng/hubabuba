@@ -1,4 +1,4 @@
-# Github Actions Was Here *igga
+# Github Actions wus Here *igga
 
 Status of Last Deployment:<br>
 <img src="https://github.com/danny9ng/hubabuba/workflows/sphinxhtml/badge.svg?branch-main"><br>
