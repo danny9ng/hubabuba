@@ -14,10 +14,12 @@ jobs:
     - name: Install sphinx and check version
       run: | 
           sudo apt-get install python3-sphinx
+          pip install sphinx_rtd_theme
           sphinx-build --version
            
     - name: Make html
       run: |
           cd ./SPH
+          ls -al
           make html
       
