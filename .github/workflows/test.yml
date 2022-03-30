@@ -1,23 +1,26 @@
 name: sphinxhtml
 on:
   push:
-    branches: 
-      - main
       
 jobs:
-  posasaks:
+  sphinxtest:
     runs-on: ubuntu-latest
     
     steps:
-    
-    - name: Print message
-      run: echo "Hello World"
-    
-    - name: List folder
-      run: ls -al
-      
+          
     - name: Git clone my repo
       uses: actions/checkout@v1
      
-    - name: List folder
-      run: ls -al
+    - name: Install sphinx and check version
+      run: | 
+          sudo apt-get install python3-sphinx
+          pip install sphinx_rtd_theme
+          pip install PyStemmer
+          sphinx-build --version
+           
+    - name: Make html
+      run: |
+          cd ./SPH
+          ls -al
+          make html
+      
