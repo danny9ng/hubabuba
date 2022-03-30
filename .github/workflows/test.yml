@@ -1,11 +1,9 @@
 name: sphinxhtml
 on:
   push:
-    branches: 
-      - main
       
 jobs:
-  posasaks:
+  sphinxtest:
     runs-on: ubuntu-latest
     
     steps:
