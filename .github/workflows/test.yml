@@ -1,25 +1,28 @@
 name: sphinxhtml
+
 on:
   push:
+    branches: 
+    - main 
       
 jobs:
   sphinxtest:
-    runs-on: ubuntu-latest
+    runs-on : ubuntu-latest
     
     steps:
           
-    - name: Git clone my repo
+    - name: Clone my repo
       uses: actions/checkout@v1
      
     - name: Install sphinx and check version
-      run: | 
+      run : | 
           sudo apt-get install python3-sphinx
           pip install sphinx_rtd_theme
           pip install PyStemmer
           sphinx-build --version
            
     - name: Make html
-      run: |
+      run : |
           cd ./SPH
           ls -al
           make html
