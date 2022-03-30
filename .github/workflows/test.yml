@@ -13,7 +13,7 @@ jobs:
      
     - name: Check sphinx version
       run: | 
-           apt-get install python3-sphinx
+           sudo apt-get install python3-sphinx
            sphinx-build --version
            
       
