@@ -11,9 +11,13 @@ jobs:
     - name: Git clone my repo
       uses: actions/checkout@v1
      
-    - name: Check sphinx version
+    - name: Install sphinx and check version
       run: | 
-           sudo apt-get install python3-sphinx
-           sphinx-build --version
+          sudo apt-get install python3-sphinx
+          sphinx-build --version
            
+    - name: Make html
+      run: |
+          cd ./SPH
+          make html
       
