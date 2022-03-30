@@ -9,15 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    
-    - name: Print message
-      run: echo "Hello World"
-    
-    - name: List folder
-      run: ls -al
-      
+          
     - name: Git clone my repo
       uses: actions/checkout@v1
      
-    - name: List folder
-      run: ls -al
+    - name: Check sphinx version
+      run: sphinx-build --version
