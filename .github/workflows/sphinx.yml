@@ -15,6 +15,7 @@ jobs:
     - name: Build HTML
       run : |
             sphinx-build -b html source build
+            tree -L 3
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
