@@ -19,7 +19,9 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: html-docs
-        path: build , "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master        
+        path: |
+          build
+          "https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" --branch master      
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
