@@ -28,6 +28,15 @@ jobs:
       with:
         name: html-docs
         path: build
+        
+    - name: Push and send notification
+      run: |
+          COMMIT_MESSAGE="Update pages on $(date +'%Y-%m-%d %H:%M:%S')"
+          git diff-index --quiet --cached HEAD -- && echo "No changes!" && exit 0 || echo $COMMIT_MESSAGE
+          # Only if repo have changes
+          git commit -m "${COMMIT_MESSAGE}"
+          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git main
+          
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
