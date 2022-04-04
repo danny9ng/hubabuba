@@ -26,7 +26,7 @@ jobs:
         path: build
         
     - name: Git push
-      run: git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git main
+      run: git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${GITHUB_ACTOR}/hubabuba main
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
