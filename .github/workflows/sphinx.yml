@@ -21,8 +21,8 @@ jobs:
        ls -al
     - name: Dependency
       run: |
-       touch /home/runner/work/hubabuba/hubabuba/build/requirements.txt
-       echo furo==2021.11.16 > /home/runner/work/hubabuba/hubabubabuild/requirements.txt
+       touch requirements.txt
+       echo furo==2021.11.16 > requirements.txt
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
