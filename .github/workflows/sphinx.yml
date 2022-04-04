@@ -17,10 +17,11 @@ jobs:
       run: |
        sphinx-build -b html source build
        tree -L 3
+       pwd
     - name: Dependency
       run: |
-       touch ./requirements.txt
-       echo furo==2021.11.16 > ./requirements.txt
+       touch build/requirements.txt
+       echo furo==2021.11.16 > build/requirements.txt
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
