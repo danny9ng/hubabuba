@@ -6,26 +6,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    
     - name: Clone repo
       uses: actions/checkout@v2
+    
     - name: Install Sphinx
-      run : |
+      run: |
             pip install -U Sphinx
 	    pip install sphinx_rtd_theme
-            sphinx-build --version
+
     - name: Build HTML
-      run : |
+      run: |
             sphinx-build -b html source build
             tree -L 3
+    
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
         name: html-docs
         path: build
+    
     - name: Dependency
       run:  |
             touch ./requirements.txt
             echo furo==2021.11.16 > ./requirements.txt
+    
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
