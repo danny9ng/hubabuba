@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: html-docs
-        path: build
+        path: ${{ github.workspace }}
         
     - name: Deploy gh-pages
       uses: peaceiris/actions-gh-pages@v3
