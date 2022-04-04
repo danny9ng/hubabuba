@@ -11,6 +11,7 @@ jobs:
     - name: Install Sphinx
       run : |
             pip install -U Sphinx
+	    pip install sphinx_rtd_theme
             sphinx-build --version
     - name: Build HTML
       run : |
@@ -21,9 +22,14 @@ jobs:
       with:
         name: html-docs
         path: build
+    - name: Dependency
+      run:  |
+            touch ./requirements.txt
+            echo furo==2021.11.16 > ./requirements.txt
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: build
+    
