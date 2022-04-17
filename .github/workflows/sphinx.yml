@@ -16,8 +16,7 @@ jobs:
        pip install sphinx_rtd_theme
        
     - name: Build HTML
-      run: |
-       sphinx-build -b html source build
+      run: sphinx-build -b html source build
        
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
